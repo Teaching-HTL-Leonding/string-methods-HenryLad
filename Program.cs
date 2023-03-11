@@ -1,7 +1,4 @@
-﻿char c = 'x';
-string s = "";
-int SubString1;
-int SubString2;
+﻿
 
 #region String.Contains
 bool Contains(char c, string s)
@@ -68,7 +65,6 @@ string SubString(int SubString1, string s, int SubString2)
 
 
 #endregion
-
 #region String.Remove
 string Remove(int SubString1, string s, int SubString2)
 {
@@ -84,15 +80,18 @@ string Remove(int SubString1, string s, int SubString2)
 }
 
 #endregion
-string Bestimmung = "";
 void CallMethod()
 {
-  
+    char c;
+    string s;
+    int SubString1;
+    int SubString2;
+    string Descion;
    do
    {
       System.Console.WriteLine("Please enter which Method you want to use");
-      Bestimmung = System.Console.ReadLine()!;
-      switch (Bestimmung)
+      Descion = System.Console.ReadLine()!;
+      switch (Descion)
       {
          case "Contains":
             System.Console.WriteLine("Please enter a char");
@@ -144,7 +143,7 @@ void CallMethod()
             System.Console.WriteLine("Please enter a valid Method");
             CallMethod();
             break;
-   }}while(Bestimmung != "exit");
+   }}while(Descion != "exit");
     
 }
 CallMethod();
