@@ -44,9 +44,27 @@ int LastIndexOf(char c, string s)
 }
 
 #endregion
-#region TrimEnd TrimStart Trim
-
-
+#region Trim
+// Die Methode bekommt als input einen string und ein int und gibt als output einen string zurück.
+// Der Wenn TrimEnd ufgerufen wird Entfernt es alle zeichen die unter dem index der eingegeben int sind aber es wird von Hinten gezählt.
+string TrimEnd(string s, int i)
+{
+    string TrimEnd = "";
+    for (int j = 0; j < s.Length - i; j++)
+    {
+        TrimEnd += s[j];
+    }
+    return TrimEnd;
+}
+string TrimStart(string s, int i)
+{
+    string TrimStart = "";
+    for (int j = i; j < s.Length; j++)
+    {
+        TrimStart += s[j];
+    }
+    return TrimStart;
+}
 #endregion
 #region String.SubString
 
@@ -115,8 +133,30 @@ void CallMethod()
             System.Console.WriteLine("LastIndexOf: " + LastIndexOf(c, s));
             break;
          case "Trim":
-            System.Console.WriteLine("Sry this Method isn't working jet.");
-            CallMethod();
+            System.Console.WriteLine("Which Trim do you want to use? TrimStart or TrimEnd");
+            Descion = System.Console.ReadLine()!;
+            if(Descion == "TrimStart")
+            {
+                System.Console.WriteLine("Please enter a string");
+                s = System.Console.ReadLine()!;
+                System.Console.WriteLine("Please enter a start index");
+                SubString1 = int.Parse(System.Console.ReadLine()!);
+                System.Console.WriteLine("TrimStart: " + TrimStart(s, SubString1));
+            }
+                else if(Descion == "TrimEnd")
+                {
+                System.Console.WriteLine("Please enter a string");
+                s = System.Console.ReadLine()!;
+                System.Console.WriteLine("Please enter a start index");
+                SubString1 = int.Parse(System.Console.ReadLine()!);
+                System.Console.WriteLine("TrimEnd: " + TrimEnd(s, SubString1));
+                }
+                else
+                {
+                System.Console.WriteLine("Please enter a valid Trim");
+                CallMethod();
+            }
+           
             break;
          case "SubString":
             System.Console.WriteLine("Please enter a string");
